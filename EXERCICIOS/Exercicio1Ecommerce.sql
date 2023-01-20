@@ -37,7 +37,6 @@ WHERE id=1;
 
 DELETE FROM produtos WHERE id=1;
 
--- -- comando que desativa o 'modo seguro' do mysql permitindo que seja executado update e delete
 SET SQL_SAFE_UPDATES=0;
 
 
