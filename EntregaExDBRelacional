@@ -1,0 +1,133 @@
+-- Ex Ecommerce ----------------------
+
+CREATE DATABASE ecommerce;
+USE ecommerce;
+
+CREATE TABLE produtos (
+	id BIGINT auto_increment,
+    nome VARCHAR(255),
+    preco DECIMAL(5,2),
+    quantidade INT,
+    marca VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+INSERT INTO produtos (nome, preco, quantidade, marca)
+VALUES("Camiseta",19.90,5,"Lacote");
+
+INSERT INTO produtos(nome,preco,quantidade,marca)
+VALUES("Calça",300.90,10,"Kelvin Cleiton");
+
+INSERT INTO produtos(nome,preco,quantidade,marca)
+VALUES("Tênis",35.90,2,"Adidos");
+
+INSERT INTO produtos(nome,preco,quantidade,marca)
+VALUES("Meia",100,2,"Naique");
+
+INSERT INTO produtos(nome,preco,quantidade,marca)
+VALUES("Boné",1035.90,5,"Pumba");
+
+SELECT*FROM produtos;
+
+SELECT*FROM produtos WHERE preco < 500;
+
+SELECT*FROM produtos WHERE preco > 500;
+
+UPDATE produtos
+SET nome = "Camiseta"
+WHERE id=1;
+
+DELETE FROM produtos WHERE id=1;
+
+SET SQL_SAFE_UPDATES=0;
+
+-- ExEscola--------------------------------------------------------
+
+CREATE DATABASE Escola;
+
+USE Escola;
+
+CREATE TABLE Alunes(
+id BIGINT AUTO_INCREMENT,
+Nome VARCHAR (255),
+RA INT,
+Turma VARCHAR (255),
+Nota DECIMAL(3,1),
+Faltas INT,
+
+PRIMARY KEY (id)
+);
+
+INSERT INTO Alunes(Nome, RA, Turma, Nota, Faltas)
+VALUES("Beatriz", "45678", "4B", "10", "0");
+
+INSERT INTO Alunes(Nome, RA, Turma, Nota, Faltas)
+VALUES("Pedro", "35478", "4B", "6.5", "4");
+
+INSERT INTO Alunes(Nome, RA, Turma, Nota, Faltas)
+VALUES("Amanda", "15648", "5B", "7", "1");
+
+INSERT INTO Alunes(Nome, RA, Turma, Nota, Faltas)
+VALUES("Henrique", "85236", "4B", "10", "10");
+
+INSERT INTO Alunes(Nome, RA, Turma, Nota, Faltas)
+VALUES("Gabriel", "15748", "5B", "8.5", "3");
+
+INSERT INTO Alunes(Nome, RA, Turma, Nota, Faltas)
+VALUES("Zayan", "56178", "7B", "10", "0");
+
+INSERT INTO Alunes(Nome, RA, Turma, Nota, Faltas)
+VALUES("Valentina", "34785", "7B", "5", "5");
+
+INSERT INTO Alunes(Nome, RA, Turma, Nota, Faltas)
+VALUES("Enzo", "47844", "7B", "7", "0");
+
+SELECT * FROM Alunes;
+
+SELECT * FROM Alunes WHERE Nota < 7;
+SELECT * FROM Alunes WHERE Nota > 7;
+
+UPDATE Alunes
+SET Nota ="8.8"
+WHERE id=5;
+
+-- ExRh ---------------------------------------------------------------------------------------
+CREATE DATABASE rh;
+
+USE rh;
+
+CREATE TABLE colaboradores(
+	id BIGINT AUTO_INCREMENT,
+	Nome VARCHAR(255),
+	CPF DECIMAL(11),
+	Tempo_de_empresa DECIMAL(2),
+	Setor VARCHAR(255),
+    Salario DECIMAL(8,2),
+
+	PRIMARY KEY(id)
+);
+
+INSERT INTO colaboradores(Nome, CPF, Tempo_de_empresa, Setor, Salario)
+VALUES ("Daniela", "41784578741", 4, "Administracao", "3500.00");
+
+INSERT INTO colaboradores(Nome, CPF, Tempo_de_empresa, Setor, Salario)
+VALUES ("Bianca", "58794248963", 10, "Atendimento", "2700.00");
+
+INSERT INTO colaboradores(Nome, CPF, Tempo_de_empresa, Setor, Salario)
+VALUES ("Maria", "75548165874", 3, "Copa", "1400.00");
+
+INSERT INTO colaboradores(Nome, CPF, Tempo_de_empresa, Setor, Salario)
+VALUES ("Jorge", "58794248963", 8, "Portaria", "1800.00");
+
+INSERT INTO colaboradores(Nome, CPF, Tempo_de_empresa, Setor, Salario)
+VALUES ("Fellipe", "41856324587", 12, "T.I", "5800.00");
+
+SELECT * FROM colaboradores;
+
+SELECT * FROM colaboradores WHERE Salario > 2000.00;
+
+SELECT * FROM colaboradores WHERE Salario < 2000.00;
+
+UPDATE colaboradores
+SET Salario = "1800.00"
+WHERE id=4 
